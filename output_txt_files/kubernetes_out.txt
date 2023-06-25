@@ -1,0 +1,31 @@
+#First run: sh run_kubernetes.sh
+deployment.apps/uda-prj4-kube created
+NAME                             READY   STATUS              RESTARTS       AGE
+kube-prj4-85ccfb5db5-xqxmv       1/1     Running             2 (7m8s ago)   8m15s
+uda-prj4-kube-65d8ff9b66-h26rt   0/1     ContainerCreating   0              0s
+error: unable to forward port because pod is not running. Current status=Pending
+
+#Second run: sh run_kubernetes.sh
+error: failed to create deployment: deployments.apps "uda-prj4-kube" already exists
+NAME                             READY   STATUS    RESTARTS        AGE
+kube-prj4-85ccfb5db5-xqxmv       1/1     Running   2 (8m13s ago)   9m20s
+uda-prj4-kube-65d8ff9b66-h26rt   1/1     Running   0               65s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+
+#Run prediction: sh make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+# Kubernete log after run prediction:
+error: failed to create deployment: deployments.apps "uda-prj4-kube" already exists
+NAME                             READY   STATUS    RESTARTS        AGE
+kube-prj4-85ccfb5db5-xqxmv       1/1     Running   2 (8m13s ago)   9m20s
+uda-prj4-kube-65d8ff9b66-h26rt   1/1     Running   0               65s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000

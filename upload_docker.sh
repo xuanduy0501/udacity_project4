@@ -6,14 +6,14 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerPath=dienpp/prj4
+dockerPath=duy051995/udacity_project4
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerPath"
-docker login -u dienpp
-docker tag prj4:v1 $dockerPath:ver1.0
+docker login -u duy051995
+docker tag udaduyblx:v1 $dockerPath:v1
 
 # Step 3:
 # Push image to a docker repository
-docker push $dockerPath:ver1.0
+docker push $dockerPath:v1
